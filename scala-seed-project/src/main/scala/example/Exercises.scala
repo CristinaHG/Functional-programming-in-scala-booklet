@@ -1,5 +1,7 @@
 package example
 
+import scala.collection.immutable.{AbstractSeq, LinearSeq}
+
 object Main extends App {
   println(Exercises.fibonacci(0))
   println(Exercises.fibonacci(1))
@@ -48,5 +50,15 @@ object Exercises {
 
   // Exercise 2.5
   def compose[A, B, C](f: B => C, g: A => B): A => C = (a: A) => f(g(a))
+
+
+  //Exercise 3.1
+  def tail[A](seq: Seq[A]): Seq[A]={
+    seq match {
+      case _ :: tail => tail
+      case Nil => Nil
+    }
+  }
+
 }
 
