@@ -23,5 +23,4 @@ class polymorphicSpec extends AnyFlatSpec with Matchers {
   "An ascendant sorted character array" should "be sorted for order (x < y)" in {
     Exercises.isSorted(Array('A', 'B', 'C'), (x: Char, y: Char) => x < y) shouldBe true
   }
-
 }

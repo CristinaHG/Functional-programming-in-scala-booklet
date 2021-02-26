@@ -52,11 +52,25 @@ object Exercises {
   def compose[A, B, C](f: B => C, g: A => B): A => C = (a: A) => f(g(a))
 
 
-  //Exercise 3.1
+  // Exercise 3.2
   def tail[A](seq: Seq[A]): Seq[A]={
     seq match {
       case _ :: tail => tail
       case Nil => Nil
+    }
+  }
+  // Exercise 3.3
+  def setHead[A](newHead: A, seq:Seq[A]): Seq[A]= {
+    newHead +: seq.tail
+  }
+
+  // Exercise 3.4
+  def drop[A](l: List[A], n:Int):List[A] = {
+    n match {
+      case 0 => l
+      case x if x < 0 => sys.error("number of element to drop must be positive")
+      case x if x > l.size => Nil
+      case _ => drop(l.tail, n-1)
     }
   }
 
